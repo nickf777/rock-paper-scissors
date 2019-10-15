@@ -1,87 +1,40 @@
 <!DOCTYPE html>
 <html>
-<script>
 
-//Next: Enhance the Functionality with Logs that detail both your choice and the computer's choice.
+<head>
+    <link href = "style.css" type = "text/css" rel = "stylesheet">
+</head>
 
+<body>
+  <h1>Rock, Paper, Scissors: First to 5 wins!</h1>
 
-//Score variables set globally
+<div id = "buttons">
+  <button class = "rock"><img src = "http://clipart-library.com/img/1603193.jpg"></button>
+  <button class = "paper"><img src = "https://thumbs.dreamstime.com/z/creative-comic-book-style-cartoon-sheet-paper-original-151000574.jpg"></button>
+  <button class = "scissors"><img src = "https://thumbs.dreamstime.com/z/angry-scissors-cartoon-vector-illustration-49122109.jpg"></button>
+</div>
 
-let userScore = 0;
-let computerScore= 0;
-let numberOfTies = 0;
+<div id = "results">
+  
+</div>
 
-//Generating the computers choice
-
-const computerPlay = () => {
-    let computerNum = Math.floor(Math.random() * 3);
-    if (computerNum === 0) {
-        return "rock";
-    } else if (computerNum === 1) {
-        return "paper";
-    } else {
-        return "scissors";
-    }
-};
-
-//Generating the result
-
-const playRound = (playerSelection, computerSelection) => {
-    let playerSelectionCase = playerSelection.toLowerCase();
-
-    if (playerSelectionCase === "rock" && computerSelection === "paper") {
-        computerScore++;
-        return "Paper beats rock! You lose!";
-
-    } else if (playerSelectionCase === "rock" && computerSelection === "scissors") {
-        userScore++;
-        return "Rock beats scissors! You win!";
-
-    } else if (playerSelectionCase === "paper" && computerSelection === "scissors") {
-        computerScore++;
-        return "Scissors beats paper! You lose!";
-        
-    } else if (playerSelectionCase === "paper" && computerSelection === "rock") {
-        userScore++;
-        return "Paper beats rock! You win!";
-        
-    } else if (playerSelectionCase === "scissors" && computerSelection === "rock") {
-        computerScore++;
-        return "Rock beats scissors! You lose!";
-        
-    } else if (playerSelectionCase === "scissors" && computerSelection === "paper") {
-        userScore++;;
-        return "Scissors beats paper! You win!";
-        
-    } else {
-        numberOfTies++;
-        return "It's a tie! Please play again!";
-  }
-};
-
-
-//Running a 5 round game that tracks the score
-
-const game = () => {
-    let numberOfRounds = 5;
-    for (i = 0; i < numberOfRounds; i++) {
-        let playerSelection = prompt("Game time! Do you choose Rock, Paper, or Scissors?");
-        console.log(`Round ${i + 1} begins! Get ready.`);
-        console.log(`You chose ${playerSelection}!`);
-        let computerSelection = computerPlay();
-        console.log(`The computer chose ${computerSelection}!`);
-        console.log(playRound(playerSelection, computerSelection));
-    };
-    console.log(`In ${numberOfRounds} rounds, you scored ${userScore}, the computer scored ${computerScore}, and you tied ${numberOfTies} times!`);
-}
-
-console.log(game());
+<div id = "score">
+    
+</div>
 
 
 
 
 
-</script>
+
+
+
+
+
+
+
+<script src = "script.js"></script>    
+</body>
 
 
 
