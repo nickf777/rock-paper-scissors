@@ -72,6 +72,11 @@ const playRound = (playerSelection, computerSelection) => {
 let results = document.getElementById("results")
 
 rock.addEventListener("click", function() {
+    //Adding transition effects
+        rock.classList.add("click")
+        rock.addEventListener("transitionend", () => {
+            rock.classList.remove("click")
+        });
         let playerSelection = "rock";
         let computerSelection = computerPlay();
         results.innerHTML = `You chose ${playerSelection}. The computer chose ${computerSelection}. ${(playRound(playerSelection,computerSelection))}`
@@ -94,6 +99,11 @@ rock.addEventListener("click", function() {
 });
 
 paper.addEventListener("click", function() {
+    //Adding transition effects
+        paper.classList.add("click")
+        paper.addEventListener("transitionend", () => {
+          paper.classList.remove("click")
+    });
         let playerSelection = "paper";
         let computerSelection = computerPlay();
         results.innerHTML = `You chose ${playerSelection}. The computer chose ${computerSelection}. ${(playRound(playerSelection,computerSelection))}`
@@ -116,10 +126,13 @@ paper.addEventListener("click", function() {
 });
 
 scissors.addEventListener("click", function() {
+        scissors.classList.add("click")
+        scissors.addEventListener("transitionend", () => {
+          scissors.classList.remove("click")
+});
         let playerSelection = "scissors";
         let computerSelection = computerPlay();
         results.innerHTML = `You chose ${playerSelection}. The computer chose ${computerSelection}. ${(playRound(playerSelection,computerSelection))}`
-        
         if (userScore === 5) {
             alert("You got five points. You're the winner!");
             userScore = 0;
@@ -136,7 +149,6 @@ scissors.addEventListener("click", function() {
             
         }
     });
-
 
 
 
